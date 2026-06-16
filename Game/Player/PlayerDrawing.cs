@@ -20,25 +20,32 @@ namespace PlayerN
         private Texture2D SpriteSheetAttacking;
         private Texture2D SpriteSheetWalking;
         private Texture2D SpriteSheetIdle;
+        private Texture2D SpriteSheetRunning;
         Vector2 origin;
         private const int FRAMES_IN_ATTACK_SHEET = 8; 
         private const int FRAMES_IN_WALK_SHEET = 6;
         private const int FRAMES_IN_IDLE_SHEET = 12;
+        private const int FRAMES_IN_RUNNING_SHEET = 8;
         private void DrawPlayer()
         {
             if(isMoving) DrawTexturePro(SpriteSheetWalking, sourceRect, destRect, origin, 0.0f, White);
+            else if(isMoving && isRunning) DrawTexturePro(SpriteSheetRunning, sourceRect, destRect, origin, 0.0f, White);
             else DrawTexturePro(SpriteSheetIdle, sourceRect, destRect, origin, 0.0f, White);
         }
 
         private void Animations()
         {
             if(isMoving) FrameTimer(FRAMES_IN_WALK_SHEET);
+            else if(isMoving && isRunning) FrameTimer(FRAMES_IN_RUNNING_SHEET);
+            else FrameTimer(FRAMES_IN_IDLE_SHEET);
             CalcSourceAndDestRecs();
         }
 
         private void FrameTimer(int totalFramesInLoop)
         {
             frameTimer += GetFrameTime();
+            if(!isMoving && currentActionRow == 3) frameSpeed = 0.36f;
+            else frameSpeed = 0.12f;
 
             if (frameTimer >= frameSpeed)
             {
@@ -50,13 +57,13 @@ namespace PlayerN
                     if (currentFrame >= totalFramesInLoop / 3)
                     {
                         currentFrame = 0; // Loop back to the first frame box
-                    }
+                    } 
                 }else{
                     if (currentFrame >= totalFramesInLoop)
                     {
                         currentFrame = 0; // Loop back to the first frame box
-                    }
-                }
+                    }    
+                }        
             }
         }
 

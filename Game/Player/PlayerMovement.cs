@@ -9,8 +9,8 @@ namespace PlayerN
     public partial class Player
     {
         private float PLAYER_MOVESPEED = 3f;
-        private float PLAYER_SPRINT_SPEED = 60f;
-        private bool isSprinting = false; 
+        private float PLAYER_SPRINT_SPEED = 5f;
+        private bool isRunning = false; 
         private bool isMoving = false;
         private void HandleMovement()
         {
@@ -20,24 +20,24 @@ namespace PlayerN
                 
                 
             }
-            if(IsKeyDown(LeftShift)) isSprinting = true;
-            else isSprinting = false;
+            if(IsKeyDown(LeftShift)) isRunning = true;
+            else isRunning = false;
 
             if(IsKeyDown(W)) {
                 currentActionRow = 3;
-                player.Y -= isSprinting ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED ;
+                player.Y -= isRunning ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED ;
             }
             if(IsKeyDown(D)) {
                 currentActionRow = 2;
-                player.X += isSprinting ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED; 
+                player.X += isRunning ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED; 
             }
             if(IsKeyDown(S)) {
                 currentActionRow = 4;
-                player.Y += isSprinting ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED;
+                player.Y += isRunning ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED;
             }
             if(IsKeyDown(A)) {
                 currentActionRow = 1;
-                player.X -= isSprinting ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED;
+                player.X -= isRunning ? PLAYER_SPRINT_SPEED : PLAYER_MOVESPEED;
             }
         }
     }
