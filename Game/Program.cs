@@ -15,7 +15,7 @@ namespace Main
             Player player = new Player();
             Vector2 camPos = new Vector2(750,350);
             Vector2 camOff = new Vector2(0,0);
-            Camera2D tempCam = new Camera2D(camOff,camPos,0,0.5f);
+            Camera2D tempCam = new Camera2D(camOff,camPos,0,1.0f);
 
             while (!Raylib.WindowShouldClose())
             {
@@ -31,7 +31,7 @@ namespace Main
                 Raylib.EndDrawing();
             }
 
-                    
+            player.Dispose();
             Raylib.CloseWindow();
         }
     }
