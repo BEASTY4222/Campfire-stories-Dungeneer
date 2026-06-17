@@ -22,19 +22,22 @@ namespace PlayerN
         private Texture2D SpriteSheetIdle;
         private Texture2D SpriteSheetRunning;
         private Texture2D SpriteSheetWalkAttack;
+        private Texture2D SpriteSheetRunningAttack;
         Vector2 origin;
         private const int FRAMES_IN_ATTACK_SHEET = 8; 
         private const int FRAMES_IN_WALK_SHEET = 6;
         private const int FRAMES_IN_IDLE_SHEET = 12;
         private const int FRAMES_IN_RUNNING_SHEET = 8;
         private const int FRAMES_IN_WALKATTACK_SHEET = 6;
+        private const int FRAMES_IN_RUNATTACK_SHEET = 8;
         private void DrawPlayer()
         {
             //DrawRectangleLinesEx(player,5,Red);
             //DrawRectangleLinesEx(destRect,5, Green);
             //DrawRectangleLinesEx(PlayerHurtBox,5, Blue);
             DrawRectangleLinesEx(HitBox,5, Orange);
-            if(isAttackingAndMoving) DrawTexturePro(SpriteSheetWalkAttack, sourceRect, destRect, origin, 0.0f, White); 
+            if(isAttackingAndMoving && isRunning) DrawTexturePro(SpriteSheetRunningAttack, sourceRect, destRect, origin, 0.0f, White); 
+            else if(isAttackingAndMoving) DrawTexturePro(SpriteSheetWalkAttack, sourceRect, destRect, origin, 0.0f, White); 
             else if(isAttacking) DrawTexturePro(SpriteSheetAttacking, sourceRect, destRect, origin, 0.0f, White);
             else if(isMoving && isRunning) DrawTexturePro(SpriteSheetRunning, sourceRect, destRect, origin, 0.0f, White);
             else if(isMoving) DrawTexturePro(SpriteSheetWalking, sourceRect, destRect, origin, 0.0f, White);
@@ -43,7 +46,8 @@ namespace PlayerN
 
         private void Animations()
         {
-            if(isAttackingAndMoving) FrameTimer(FRAMES_IN_WALKATTACK_SHEET);
+            if(isAttackingAndMoving && isRunning) FrameTimer(FRAMES_IN_RUNATTACK_SHEET);
+            else if(isAttackingAndMoving) FrameTimer(FRAMES_IN_WALKATTACK_SHEET);
             else if(isAttacking) FrameTimer(FRAMES_IN_ATTACK_SHEET);
             else if(isMoving && isRunning) FrameTimer(FRAMES_IN_RUNNING_SHEET);
             else if(isMoving) FrameTimer(FRAMES_IN_WALK_SHEET);

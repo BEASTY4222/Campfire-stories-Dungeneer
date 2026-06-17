@@ -27,6 +27,7 @@ namespace PlayerN
             SpriteSheetIdle = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Idle_with_shadow.png");
             SpriteSheetRunning = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Run_with_shadow.png");
             SpriteSheetWalkAttack = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Walk_Attack_with_shadow.png");
+            SpriteSheetRunningAttack = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Run_Attack_with_shadow.png");
         }
 
         public void Draw()
@@ -49,7 +50,8 @@ namespace PlayerN
             UnloadTexture(SpriteSheetWalking);
             UnloadTexture(SpriteSheetIdle);
             UnloadTexture(SpriteSheetRunning);
-        
+            UnloadTexture(SpriteSheetRunningAttack);
+            UnloadTexture(SpriteSheetWalkAttack);
         }
     }
 }
