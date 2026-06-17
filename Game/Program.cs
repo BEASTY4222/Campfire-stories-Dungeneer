@@ -1,6 +1,7 @@
 ﻿using Raylib_cs;
 using PlayerN;
 using System.Numerics;
+using WorldN;
 
 
 namespace Main
@@ -13,19 +14,20 @@ namespace Main
             Raylib.SetTargetFPS(144);
 
             Player player = new Player();
-            Vector2 camPos = new Vector2(750,350);
-            Vector2 camOff = new Vector2(0,0);
-            Camera2D tempCam = new Camera2D(camOff,camPos,0,1.0f);
+            World world = new World();
+            
 
             while (!Raylib.WindowShouldClose())
             {
                 player.Actions();
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.Lime);
-                Raylib.BeginMode2D(tempCam);
+                Raylib.ClearBackground(Color.DarkGray);
+                Raylib.BeginMode2D(player.PlayerCam);
 
+                world.DrawWorld();
                 player.Draw();
+                
                 
                 Raylib.EndMode2D();
                 Raylib.EndDrawing();

@@ -14,7 +14,7 @@ namespace PlayerN
         public Player()
         {
             PlayerHurtBox = new Rectangle(player.X,player.Y,65,85);
-
+            PlayerCam = new Camera2D(new Vector2(1400.0f / 2,700.0f / 2) ,new Vector2(player.X,player.Y),0,1.0f);
             currentFrame = 0;
             currentActionRow = 0;
             frameTimer = 0.0f;
@@ -40,6 +40,8 @@ namespace PlayerN
             HandleMovement();
 
             HandleAttacking();
+
+            HandleCamera();
 
             Animations();
         } 
