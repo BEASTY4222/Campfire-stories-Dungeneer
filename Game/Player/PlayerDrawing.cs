@@ -34,7 +34,7 @@ namespace PlayerN
             //DrawRectangleLinesEx(destRect,5, Green);
             //DrawRectangleLinesEx(PlayerHurtBox,5, Blue);
             DrawRectangleLinesEx(HitBox,5, Orange);
-            if(isAttacking && isMoving) DrawTexturePro(SpriteSheetWalkAttack, sourceRect, destRect, origin, 0.0f, White); 
+            if(isAttackingAndMoving) DrawTexturePro(SpriteSheetWalkAttack, sourceRect, destRect, origin, 0.0f, White); 
             else if(isAttacking) DrawTexturePro(SpriteSheetAttacking, sourceRect, destRect, origin, 0.0f, White);
             else if(isMoving && isRunning) DrawTexturePro(SpriteSheetRunning, sourceRect, destRect, origin, 0.0f, White);
             else if(isMoving) DrawTexturePro(SpriteSheetWalking, sourceRect, destRect, origin, 0.0f, White);
@@ -43,7 +43,7 @@ namespace PlayerN
 
         private void Animations()
         {
-            if(isAttackingAndMoving && isMoving) FrameTimer(FRAMES_IN_WALKATTACK_SHEET);
+            if(isAttackingAndMoving) FrameTimer(FRAMES_IN_WALKATTACK_SHEET);
             else if(isAttacking) FrameTimer(FRAMES_IN_ATTACK_SHEET);
             else if(isMoving && isRunning) FrameTimer(FRAMES_IN_RUNNING_SHEET);
             else if(isMoving) FrameTimer(FRAMES_IN_WALK_SHEET);
