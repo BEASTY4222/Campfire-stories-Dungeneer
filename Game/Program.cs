@@ -22,7 +22,7 @@ namespace Main
                 player.Actions();
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.White);
+                Raylib.ClearBackground(Color.Lime);
                 Raylib.BeginMode2D(tempCam);
 
                 player.Draw();

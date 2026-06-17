@@ -20,6 +20,7 @@ namespace PlayerN
                 
                 
             }
+
             if(IsKeyDown(LeftShift)) isRunning = true;
             else isRunning = false;
 

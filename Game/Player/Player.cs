@@ -9,9 +9,12 @@ namespace PlayerN
 
     public partial class Player
     {
-        private Rectangle player = new(700, 350, 75, 75);
+        private Rectangle player = new(900, 450, 75, 75);
+        private Rectangle PlayerHurtBox;
         public Player()
         {
+            PlayerHurtBox = new Rectangle(player.X,player.Y,65,85);
+
             currentFrame = 0;
             currentActionRow = 0;
             frameTimer = 0.0f;
@@ -23,6 +26,7 @@ namespace PlayerN
             SpriteSheetWalking = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Walk_with_shadow.png");
             SpriteSheetIdle = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Idle_with_shadow.png");
             SpriteSheetRunning = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Run_with_shadow.png");
+            SpriteSheetWalkAttack = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Walk_Attack_with_shadow.png");
         }
 
         public void Draw()
@@ -34,6 +38,8 @@ namespace PlayerN
         {
             HandleMovement();
 
+            HandleAttacking();
+
             Animations();
         } 
 
@@ -41,6 +47,9 @@ namespace PlayerN
         {
             UnloadTexture(SpriteSheetAttacking);
             UnloadTexture(SpriteSheetWalking);
+            UnloadTexture(SpriteSheetIdle);
+            UnloadTexture(SpriteSheetRunning);
+        
         }
     }
 }
