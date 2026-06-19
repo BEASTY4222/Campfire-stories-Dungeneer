@@ -21,28 +21,28 @@ namespace PlayerN
                 switch (currentActionRow)
                 {
                     case 3:
-                        HitBox.X = PlayerHurtBox.X - 10;
-                        HitBox.Y = PlayerHurtBox.Y - 25;
-                        HitBox.Width = 100;
-                        HitBox.Height = 30;
+                        HitBox.X = PlayerHurtBox.X - 5;
+                        HitBox.Y = PlayerHurtBox.Y - 15;
+                        HitBox.Width = 35;
+                        HitBox.Height = 20;
                         break;
                     case 4:
-                        HitBox.X = PlayerHurtBox.X - 10;
-                        HitBox.Y = PlayerHurtBox.Y + 95;
-                        HitBox.Width = 100;
-                        HitBox.Height = 30;
+                        HitBox.X = PlayerHurtBox.X - 5;
+                        HitBox.Y = PlayerHurtBox.Y + 25;
+                        HitBox.Width = 35;
+                        HitBox.Height = 20;
                         break;
                     case 2:
-                        HitBox.X = PlayerHurtBox.X + 65;
+                        HitBox.X = PlayerHurtBox.X + 25;
                         HitBox.Y = PlayerHurtBox.Y;
-                        HitBox.Width = 50;
-                        HitBox.Height = 100;
+                        HitBox.Width = 20;
+                        HitBox.Height = 30;
                         break;
                     case 1:
-                        HitBox.X = PlayerHurtBox.X - 45;
+                        HitBox.X = PlayerHurtBox.X - 20;
                         HitBox.Y = PlayerHurtBox.Y;
-                        HitBox.Width = 50;
-                        HitBox.Height = 100;
+                        HitBox.Width = 20;
+                        HitBox.Height = 30;
                         break;
                 }
             }
@@ -53,28 +53,28 @@ namespace PlayerN
                 switch (currentActionRow)
                 {
                     case 3:
-                        HitBox.X = PlayerHurtBox.X - 10;
-                        HitBox.Y = PlayerHurtBox.Y - 25;
-                        HitBox.Width = 100;
-                        HitBox.Height = 30;
+                        HitBox.X = PlayerHurtBox.X - 5;
+                        HitBox.Y = PlayerHurtBox.Y - 15;
+                        HitBox.Width = 35;
+                        HitBox.Height = 20;
                         break;
                     case 4:
-                        HitBox.X = PlayerHurtBox.X - 10;
-                        HitBox.Y = PlayerHurtBox.Y + 95;
-                        HitBox.Width = 100;
-                        HitBox.Height = 30;
+                        HitBox.X = PlayerHurtBox.X - 5;
+                        HitBox.Y = PlayerHurtBox.Y + 25;
+                        HitBox.Width = 35;
+                        HitBox.Height = 20;
                         break;
                     case 2:
-                        HitBox.X = PlayerHurtBox.X + 65;
+                        HitBox.X = PlayerHurtBox.X + 25;
                         HitBox.Y = PlayerHurtBox.Y;
-                        HitBox.Width = 50;
-                        HitBox.Height = 100;
+                        HitBox.Width = 20;
+                        HitBox.Height = 30;
                         break;
                     case 1:
-                        HitBox.X = PlayerHurtBox.X - 45;
+                        HitBox.X = PlayerHurtBox.X - 20;
                         HitBox.Y = PlayerHurtBox.Y;
-                        HitBox.Width = 50;
-                        HitBox.Height = 100;
+                        HitBox.Width = 20;
+                        HitBox.Height = 30;
                         break;
                 }
             }

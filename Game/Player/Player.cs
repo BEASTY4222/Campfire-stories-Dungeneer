@@ -9,12 +9,12 @@ namespace PlayerN
 
     public partial class Player
     {
-        private Rectangle player = new(900, 450, 75, 75);
+        private Rectangle player = new(125, 500, 75, 75);
         private Rectangle PlayerHurtBox;
         public Player()
         {
-            PlayerHurtBox = new Rectangle(player.X,player.Y,65,85);
-            PlayerCam = new Camera2D(new Vector2(1400.0f / 2,700.0f / 2) ,new Vector2(player.X,player.Y),0,1.0f);
+            PlayerHurtBox = new Rectangle(player.X,player.Y,25,30);
+            PlayerCam = new Camera2D(new Vector2(1600.0f / 2, 1000.0f / 2) ,new Vector2(player.X,player.Y),0, 2f);
             currentFrame = 0;
             currentActionRow = 0;
             frameTimer = 0.0f;

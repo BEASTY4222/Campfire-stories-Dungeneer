@@ -9,7 +9,7 @@ namespace WorldN
 
         public World()
         {
-            SpriteDungeon = LoadTexture("../Game/Assests/map.png");
+            SpriteDungeon = LoadTexture("../Game/Assests/mapSmallHighRes.png");
         }
 
         public void DrawWorld()
