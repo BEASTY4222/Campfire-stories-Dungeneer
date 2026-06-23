@@ -42,6 +42,8 @@ namespace PlayerN
             else if(isMoving && isRunning) DrawTexturePro(SpriteSheetRunning, sourceRect, destRect, origin, 0.0f, White);
             else if(isMoving) DrawTexturePro(SpriteSheetWalking, sourceRect, destRect, origin, 0.0f, White);
             else DrawTexturePro(SpriteSheetIdle, sourceRect, destRect, origin, 0.0f, White);
+
+            DrawUi();
         }
 
         private void Animations()

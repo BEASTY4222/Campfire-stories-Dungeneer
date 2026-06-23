@@ -9,6 +9,8 @@ namespace PlayerN
 
     public partial class Player
     {
+        public int playerHealth{get; set;}
+        public int playerStamina{get; set;}
         private Rectangle player = new(640, 1230, 75, 75);
         private Rectangle PlayerHurtBox;
         public Player()
@@ -28,6 +30,8 @@ namespace PlayerN
             SpriteSheetRunning = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Run_with_shadow.png");
             SpriteSheetWalkAttack = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Walk_Attack_with_shadow.png");
             SpriteSheetRunningAttack = LoadTexture("../Game/Assests/swords man Charactet/PNG/Swordsman_lvl2/With_shadow/Swordsman_lvl2_Run_Attack_with_shadow.png");
+
+            playerUi = LoadTexture("../Game/Assests/ui/PNG/MyPlayerUI.png");
         }
 
         public void Draw()
