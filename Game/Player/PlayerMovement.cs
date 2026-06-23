@@ -8,8 +8,8 @@ namespace PlayerN
 {
     public partial class Player
     {
-        private float PLAYER_MOVESPEED = 1.5f;
-        private float PLAYER_SPRINT_SPEED = 2f;
+        private float PLAYER_MOVESPEED = 0.5f;
+        private float PLAYER_SPRINT_SPEED = 1f;
         private bool isRunning = false; 
         private bool isMoving = false;
         private void HandleMovement()

@@ -34,8 +34,8 @@ namespace PlayerN
         {
             //DrawRectangleLinesEx(player,5,Red);
             //DrawRectangleLinesEx(destRect,5, Green);
-            DrawRectangleLinesEx(PlayerHurtBox,1, Blue);
-            DrawRectangleLinesEx(HitBox,1, Orange);
+            //DrawRectangleLinesEx(PlayerHurtBox,1, Blue);
+            //DrawRectangleLinesEx(HitBox,1, Orange);
             if(isAttackingAndMoving && isRunning) DrawTexturePro(SpriteSheetRunningAttack, sourceRect, destRect, origin, 0.0f, White); 
             else if(isAttackingAndMoving) DrawTexturePro(SpriteSheetWalkAttack, sourceRect, destRect, origin, 0.0f, White); 
             else if(isAttacking) DrawTexturePro(SpriteSheetAttacking, sourceRect, destRect, origin, 0.0f, White);

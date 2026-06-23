@@ -9,7 +9,7 @@ namespace PlayerN
 
     public partial class Player
     {
-        private Rectangle player = new(125, 500, 75, 75);
+        private Rectangle player = new(640, 1230, 75, 75);
         private Rectangle PlayerHurtBox;
         public Player()
         {
